@@ -24,7 +24,7 @@ Docker will be used to install the applications on top of our server. This strea
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     # Update the apt package index, and install the latest version of Docker Engine and containerd
     sudo apt-get update
-    sudo apt-get install docker-ce docker-ce-cli containerd.io
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose
 
 ### Clone GitHub Repository
 This will copy the docker compose file and template .env file to the server. Assuming the server was created in the Azure cloud, git will come pre-installed. If you choose to use another server, make sure you install the git package prior to this.
@@ -32,4 +32,7 @@ This will copy the docker compose file and template .env file to the server. Ass
     git clone https://github.com/cap-miwg/snipeit-docker.git
 
 ### Configure Environment File
-The .env file is a text file that contains required variables the containers will utilize when started. Edit this file to your needs. More info [here.](https://snipe-it.readme.io/docs/docker)
+The .env file is a text file that contains required variables the containers will utilize when started. You will be able to fill out everything except the API key which will be generated in the next step (Assuming this is the first time running the containers). Edit this file to your needs. More info [here.](https://snipe-it.readme.io/docs/docker)
+
+### [First Time] Generate API Key
+
