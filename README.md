@@ -26,4 +26,5 @@ Docker will be used to install the applications on top of our server. This strea
 
 ### Clone GitHub Repository
 This will copy the docker compose file to the server. Assuming the server was created in the Azure cloud, it will come with the git package. If you choose to use another server, make sure you install the git package prior to this.
+
     git clone https://github.com/cap-miwg/snipeit-docker.git
