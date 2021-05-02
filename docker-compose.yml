@@ -44,3 +44,6 @@ services:
     ports:
       - 80:80
       - 443:443
+
+volumes:
+  snipesql-vol:
