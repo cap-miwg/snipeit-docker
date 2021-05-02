@@ -7,7 +7,7 @@ services:
     restart: always
     image: mysql:5.6
     volumes:
-      - snipesql-vol:/var/lib/mysql
+      - ./snipeit-db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: "<<YOUR MYSQL ROOT PASSWORD>>"
       MYSQL_DATABASE: "snipeit"
@@ -44,6 +44,3 @@ services:
     ports:
       - 80:80
       - 443:443
-
-volumes:
-  snipesql-vol:
