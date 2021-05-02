@@ -31,8 +31,20 @@ This will copy the docker compose file and template .env file to the server. Ass
 
     git clone https://github.com/cap-miwg/snipeit-docker.git
 
-### Configure Environment File
-The .env file is a text file that contains required variables the containers will utilize when started. You will be able to fill out everything except the API key which will be generated in the next step (Assuming this is the first time running the containers). Edit this file to your needs. More info [here.](https://snipe-it.readme.io/docs/docker)
+### Configure Docker Compose File
+The docker compose file is a yaml file that contains the required configuration and variables the containers will utilize when started. You will be able to fill out everything except the API key which will be generated in the next step (Assuming this is the first time running the containers). Edit this file to your needs. More info [here.](https://snipe-it.readme.io/docs/docker)
 
 ### [First Time] Generate API Key
+You will need to generate an application key to paste into your docker-compose file. The following command will pull the snipe-it container image and run it. Snipe-IT will generate an application key and exit. The --rm flag will automatically remove the container when it exits. Take the generated application key and update the corresponding variable in the docker compose file.
 
+    docker run --rm snipe/snipe-it
+
+### Test Setup
+Bring all the containers up with the following command to test. This attaches the terminal to the container to see logs. Use ctrl+c to exit and shutdown the containers successfully. Fix any errors shown in the logs and/or move on.
+
+    docker-compose up 
+
+### Run
+If everything is running fine, run the following command. The -d flag runs the container detached from the terminal.
+
+    docker-compose up -d
