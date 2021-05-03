@@ -65,6 +65,7 @@ Push the certificate and key file you just downloaded to the ubuntu host. This c
 
 #### Build an stunnel
 > Reference: https://support.google.com/a/answer/9089736
+
 Snipe-IT doesn't offer a way to authenticate to LDAP with a client certificate, so we will use a stunnel (secure tunnel) as a proxy. This stunnel will be bound to a local port on the host machine that the application can send traffic to in order to reach Google's LDAP directory. These are the steps required in order to that.
 
  1. Install stunnel. For example, on Ubuntu:
