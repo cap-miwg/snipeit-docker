@@ -8,18 +8,18 @@ services:
     image: mysql:5.6
     volumes:
       - ./snipeit-db:/var/lib/mysql
+    network_mode: "host"
     environment:
       MYSQL_ROOT_PASSWORD: "<<YOUR MYSQL ROOT PASSWORD>>"
       MYSQL_DATABASE: "snipeit"
       MYSQL_USER: "snipeit"
       MYSQL_PASSWORD: "<<YOUR MYSQL USER PASSWORD>>"
-    ports:
-      - 3306:3306
-
+      
   snipeit:
     container_name: snipeit
     restart: always
     image: snipe/snipe-it:latest
+    network_mode: "host"
     environment:
       APP_ENV: "production"
       APP_DEBUG: "false"
@@ -31,7 +31,7 @@ services:
       MYSQL_DATABASE: "snipeit"
       MYSQL_USER: "snipeit"
       MYSQL_PASSWORD: "<<YOUR MYSQL USER PASSWORD>>"
-      MYSQL_PORT_3306_TCP_ADDR: "mysql"
+      MYSQL_PORT_3306_TCP_ADDR: "127.0.0.1"
       MAIL_PORT_587_TCP_ADDR: "<<FQDN OF YOUR MAIL SERVER>>"
       MAIL_PORT_587_TCP_PORT: "587"
       MAIL_ENV_FROM_ADDR: "<<SEND FROM ADDRESS>>"
@@ -39,8 +39,3 @@ services:
       MAIL_ENV_ENCRYPTION: "tls"
       MAIL_ENV_USERNAME: "<<MAIL SERVER LOGIN>>"
       MAIL_ENV_PASSWORD: "<<MAIL SERVER PASSWORD>>"
-    links:
-      - snipe-mysql:mysql
-    ports:
-      - 80:80
-      - 443:443
