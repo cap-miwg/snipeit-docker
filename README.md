@@ -6,6 +6,7 @@ This repo is currently being developed. These items are the things that still ne
 
  - Custom domain name configuration
  - SSL configuration (required for SAML integration)
+ - SAML Integration with Google
 
 ## Server Configuration
 > Microsoft Azure Cloud
