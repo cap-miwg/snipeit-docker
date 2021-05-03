@@ -1,10 +1,19 @@
 # snipeit-docker
 Snipe IT supply management system used for uniforms.
 
+## To-Do List
+This repo is currently being developed. These items are the things that still need to be worked and added to the README file.
+
+ - Custom domain name configuration
+ - SSL configuration (required for SAML integration)
+
 ## Server Configuration
 > Microsoft Azure Cloud
 > Ubuntu 18.04-lts-gen2
 > Standard D2s v3 (2vCPUs, 8GiB RAM)
+
+### Example Environment Diagram
+![Diagram](https://user-images.githubusercontent.com/28149061/116938724-39564300-ac39-11eb-9de9-bfcbc9b17c7b.png)
 
 ### Create new Server
 Spin up the server through the GUI or through a PowerShell script (not included). Future improvements will include a powershell script to completely start a snipe-it instance in Azure.
